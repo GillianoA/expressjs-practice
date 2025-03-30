@@ -2,15 +2,23 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
+    console.log(req.query.name)
     res.send('Users List')
 })
 
 router.get('/new', (req, res) => {
-    res.send("User New Form")
+    res.render('users/new', { firstname: 'Gilliano' })
 })
 
 router.post('/', (req, res) => {
-    res.send('Create User')
+    const isValid = true
+    if (isValid) {
+        users.push({ name: req.body.firstname })
+        res.redirect(`/users/${users.length - 1}`)
+    } else {
+        console.log('Error')
+        res.render('users/new', { firstname: req.body.firstname })
+    }
 })
 
 router.get('/:id', (req, res) => {
