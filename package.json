@@ -11,7 +11,9 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^4.21.2"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "nodejs-practice": "file:"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
